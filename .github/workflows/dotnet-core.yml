@@ -33,7 +33,4 @@ jobs:
       - name: Running test...
         run: dotnet test --configuration Release --no-build
 
-      - name: Generating docs...
-        working-directory: docs
-        run: doxygen Doxyfile
-        continue-on-error: false
+ 
