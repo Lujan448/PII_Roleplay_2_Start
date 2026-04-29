@@ -5,7 +5,7 @@
 
 namespace Archers
 {
-    public class Bow
+    public class Bow : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Bow
         //Valor de ataque y de defensa.

@@ -4,7 +4,7 @@
 //De esta forma, cualquier modificación relacionada a la lanza se realiza únicamente acá.
 namespace Elfs
 {
-    public class Spear
+    public class Spear : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de ataque y de defensa.

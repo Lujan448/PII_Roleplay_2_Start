@@ -4,7 +4,7 @@
 //De esta forma, cualquier modificación relacionada al escudo se realiza únicamente acá.
 namespace Dwarfs
 {
-public class Shield
+public class Shield : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Shield
         //Valor de ataque y de defensa.

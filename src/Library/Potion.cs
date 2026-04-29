@@ -2,9 +2,11 @@
 //Se aplica SRP separándola de Elf, ya que si la lógica de las pociones viviera dentro de Elf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a las pociones se realiza únicamente acá.
+using Ucu.Poo.RolePlayGame;
+
 namespace Elfs
 {
-    public class Potion
+    public class Potion : IPotion
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Potion
         //Valor de nombre, poder de curación, ataque y de defensa.

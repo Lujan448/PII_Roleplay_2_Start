@@ -3,9 +3,11 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a los hechizos se realiza únicamente acá.
 
+using Ucu.Poo.RolePlayGame;
+
 namespace Spells
 {
-    public class Spell
+    public class Spell : ISpell
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de nombre, ataque y de defensa.

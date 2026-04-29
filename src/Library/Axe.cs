@@ -3,10 +3,12 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al hacha se realiza únicamente acá.
 
+using Ucu.Poo.RolePlayGame;
+
 namespace Dwarfs
 
 {
-    public class Axe
+    public class Axe : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de ataque y de defensa.

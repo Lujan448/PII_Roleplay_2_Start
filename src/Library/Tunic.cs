@@ -5,7 +5,7 @@
 
 namespace Wizards
 {
-    public class Tunic
+    public class Tunic : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Shield
         //Valor de ataque y de defensa.

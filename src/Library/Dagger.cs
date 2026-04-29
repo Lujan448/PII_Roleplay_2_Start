@@ -5,7 +5,7 @@
 
 namespace Archers
 {
-    public class Dagger
+    public class Dagger : IEquipmentStats
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Dagger
         //Valor de ataque y de defensa
