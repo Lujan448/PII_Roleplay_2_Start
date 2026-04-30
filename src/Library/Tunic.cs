@@ -3,9 +3,11 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a la tunica se realiza únicamente acá.
 
+using Ucu.Poo.RolePlayGame;
+
 namespace Wizards
 {
-    public class Tunic : IEquipmentStats
+    public class Tunic : IItems
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Shield
         //Valor de ataque y de defensa.

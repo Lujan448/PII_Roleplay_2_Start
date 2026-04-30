@@ -8,41 +8,28 @@ using Ucu.Poo.RolePlayGame;
 //De esta forma, cualquier modificación relacionada al libro se realiza únicamente acá.
 namespace Wizards
 {
-    public class SpellBook : IInventory<Spell>
+    public class SpellBook
     {
         //Esta es la lista real, pero ahora es privada. 
         //Nadie de afuera puede tocarla directamente.
         private List<Spell> spellList = new List<Spell>();
 
         //Método para agregar un hechizo
-        public void AddMagic(Spell spell)
+        public void AddSpell(Spell spell)
         {
             this.spellList.Add(spell);
         }
 
         //Método para ver si hay un hechizo
-        public bool HasMagic(Spell spell)
+        public bool HasSpell(Spell spell)
         {
             return spellList.Contains(spell);
         }
 
         //Método para quitar un hexhizo
-        public void RemoveMagic(Spell spell)
+        public void RemoveSpell(Spell spell)
         {
             spellList.Remove(spell);
-        }
-
-        //Método para calcular el valor total del hechizo de defensa.
-        //Lo colocamos aca porque creemos que para realizarlo se tiene aquella información que
-        //es necesaria, porque nosotros interactuamos en esta clase directamente con la clase spell, no necesitamos nada más.
-        public int TotalSpellDefense()  //Método propio de la clase SpellBook
-        {
-            int total = 0;
-            foreach (Spell spell in spellList)
-            {
-                total += spell.DefenseValue;
-            }
-            return total;
         }
     }
 }

@@ -7,7 +7,7 @@ using Ucu.Poo.RolePlayGame;
 
 namespace Spells
 {
-    public class Spell : ISpell
+    public class Spell : IItems
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de nombre, ataque y de defensa.

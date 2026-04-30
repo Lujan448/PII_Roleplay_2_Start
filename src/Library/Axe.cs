@@ -8,7 +8,7 @@ using Ucu.Poo.RolePlayGame;
 namespace Dwarfs
 
 {
-    public class Axe : IEquipmentStats
+    public class Axe : IItems
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de ataque y de defensa.

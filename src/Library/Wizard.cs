@@ -1,10 +1,11 @@
-using Spells;
+using Ucu.Poo.RolePlayGame;
+using Library;
 
 //Es la clase Experta, ya que se encarga de conocer todas las responsabilidades que tiene Wizard
 //y los comportamientos que va a realizar son a partir del conocimiento de cada una de estas responsabilidades.
 namespace Wizards
 {
-    public class Wizard : ICharacter, IItems
+    public class Wizard : ICharacters
     {
         //Iniciamos cada uno de las responsabiliades de conocer a la clase Wizard.
         //Su nombre, valor de ataque, de defensa y su vida.
@@ -67,13 +68,25 @@ namespace Wizards
         }
     
         //Este método lo que va a realizar es que este personaje puede recibir ataque de otro.
-        public void ReceiveAttack(int attackValue)
+        public void ReceiveAttack(IItems attackValue)
         {
-            int damage = attackValue - this.DefenseValue;
+            int damage = attackValue.AttackValue - this.DefenseValue;
             if (damage > 0) 
             {
                 this.Health -= damage;
             }
+        }
+
+        public void AttackOthers(ICharacters characters, IItems item)
+        {
+            characters.ReceiveAttack(item);
+        }
+
+        //cambiamos la forma en la que curabamos a los personajes, ya que creemos que habíamos complejizado completamente
+        //la letra y perfectamente la podemos hacer mucho más sencilla, por lo tanto aplicamos lo siguiente
+        public void Cure()
+        {
+            this.Health = maxHealth;
         }
 
         //En los siguientes dos métodos lo que se hace es poder cambiar el arma que tienen por uno nuevo
@@ -81,15 +94,9 @@ namespace Wizards
         //las responsabilidades correspondientes y además porque por más que las clase MagicStaff o Tunic de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se cambia un item solo,
         //es el personaje el que cambia el item por otro.
-        public void ChangeItem(MagicStaff newStaff)
+        public void ChangeItem(IItems newItem)
         {
-            this.AttackValue = newStaff.AttackValue;  
-        }
-
-        public void ChangeItem(Tunic newTunic)
-        {
-            this.DefenseValue = newTunic.DefenseValue;
-            
+            this.AttackValue = newItem.AttackValue;
         }
 
         //En los siguientes dos métodos lo que se hace es poder remover el arma que tiene
@@ -97,43 +104,25 @@ namespace Wizards
         //las responsabilidades correspondientes y además porque por más que las clase MagicStaff o Tunic de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se saca un item solo,
         //es el personaje el que saca el item.
-        public void RemoveItem(MagicStaff staff)
+        public void RemoveItem(IItems item)
         {
             this.AttackValue = 0;
             this.DefenseValue = 0;
         }
 
-        public void RemoveItem(Tunic tunic)
+        //Se encarga de calcular el total de ataque del wizard
+        public int AttackTotal(IItems item1, IItems item2)
         {
-            this.AttackValue = 0;
-            this.DefenseValue = 0;
-        }
-
-        public int AttackTotal(IItems dagger, IItems bow)
-        {
-            int totalAttack = this.AttackValue + dagger.AttackValue + bow.AttackValue;
+            int totalAttack = this.AttackValue + item1.AttackValue + item2.AttackValue;
             return totalAttack;
         }
 
 
         //Es el encargado de calcular el total de valor de defensa que tiene el personaje.
-        public int DefenseTotal(SpellBook book, Tunic tunic)
+        public int DefenseTotal(IItems item1, IItems item2)
         {
-            int totalSpellDefense = book.TotalSpellDefense();
-            int totalDefense = this.DefenseValue + tunic.DefenseValue + totalSpellDefense;
+            int totalDefense = this.defenseValue + item1.DefenseValue + item2.DefenseValue;
             return totalDefense;
-        }
-
-        public void HealCompletely() => this.Health = maxHealth;
-
-        //Es el encargado de curar a alguien y que le quede su vida inicial
-        public void ThrowCure(Potion potion, Archer target, PotionInventory inventory)
-        {
-            if (inventory.HasMagic(potion))
-            {
-                target.HealCompletely();
-                inventory.RemoveMagic(potion);
-            }
         }
     }
 }

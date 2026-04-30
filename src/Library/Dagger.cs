@@ -3,9 +3,11 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al daga se realiza únicamente acá.
 
+using Ucu.Poo.RolePlayGame;
+
 namespace Archers
 {
-    public class Dagger : IEquipmentStats
+    public class Dagger : IItems
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Dagger
         //Valor de ataque y de defensa

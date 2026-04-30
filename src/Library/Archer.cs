@@ -1,10 +1,11 @@
 //Es la clase Experta, ya que se encarga de conocer todas las responsabilidades que tiene Archer 
 //y los comportamientos que va a realizar son a partir del conocimiento de cada una de estas responsabilidades.
-using Elfs;
+using Library;
+using Ucu.Poo.RolePlayGame;
 
 namespace Archers
 {
-    public class Archer
+    public class Archer : ICharacters
     {
         //Iniciamos cada uno de las responsabiliades de conocer a la clase Archer.
         //Su nombre, valor de ataque, de defensa y su vida.
@@ -67,18 +68,23 @@ namespace Archers
         }
 
         //Este método lo que va a realizar es que este personaje puede recibir ataque de otro.
-        public void ReceiveAttack(int attackValue)
+        public void ReceiveAttack(IItems attackValue)
         {
-            int damage = attackValue - this.DefenseValue;
+            int damage = attackValue.AttackValue - this.DefenseValue;
             if (damage > 0) 
             {
                 this.Health -= damage;
             }
         }
 
-        public void AttackOthers(Elf target, Axe axe)
+        public void AttackOthers(ICharacters characters, IItems item)
         {
-            target.ReceiveAttack(axe.AttackValue);
+            characters.ReceiveAttack(item);
+        }
+
+        public void Cure()
+        {
+            this.Health = maxHealth;
         }
 
         //En los siguientes dos métodos lo que se hace es poder cambiar el arma que tienen por uno nuevo
@@ -86,49 +92,36 @@ namespace Archers
         //las responsabilidades correspondientes y además porque por más que las clase Bow o Dagger de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se cambia un item solo,
         //es el personaje el que cambia el item por otro.
-        public void ChangeItem(Bow newBow)
+        public void ChangeItem(IItems newItem)
         {
-            this.AttackValue = newBow.AttackValue;  
+            this.AttackValue = newItem.AttackValue;
         }
 
-        public void ChangeItem(Dagger newDagger)
-        {
-            this.AttackValue = newDagger.AttackValue;
-        }
-
-        //En los siguientes dos métodos lo que se hace es poder remover el arma que tiene
+        //En el siguiente método lo que se hace es poder remover el arma que tiene
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase Bow o Dagger de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se saca un item solo,
         //es el personaje el que saca el item.
-        public void RemoveItem(Bow bow)
-        {
-            this.AttackValue = 0;
-            this.DefenseValue = 0;
-        }
-        public void RemoveItem(Dagger dagger)
+        public void RemoveItem(IItems item)
         {
             this.AttackValue = 0;
             this.DefenseValue = 0;
         }
 
-        //Es el encargado de calcular el ataque total.
-        public int AttackTotal(Dagger dagger, Bow bow)
+
+        //Es el encargado de calcular el ataque total del personaje.
+        public int AttackTotal(IItems item1, IItems item2)
         {
-            int totalAttack = this.AttackValue + dagger.AttackValue + bow.AttackValue;
+            int totalAttack = this.AttackValue + item1.AttackValue + item2.AttackValue;
             return totalAttack;
         }
 
-        public void HealCompletely() => this.Health = maxHealth;
-
-        //Es el encargado de curar a alguien y que le quede su vida inicial
-        public void ThrowCure(Potion potion, Archer target, PotionInventory inventory)
+        //Se encarga de calcular la defensa total del personaje
+        public int DefenseTotal(IItems item1, IItems item2)
         {
-            if (inventory.HasMagic(potion))
-            {
-                target.HealCompletely();
-                inventory.RemoveMagic(potion);
-            }
+            int totalDefense = this.defenseValue + item1.DefenseValue + item2.DefenseValue;
+            return totalDefense;
         }
+
     }  
 }

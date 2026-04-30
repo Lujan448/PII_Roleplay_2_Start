@@ -2,9 +2,11 @@
 //Se aplica SRP separándola de Elf, ya que si la lógica de la lanza viviera dentro de Elf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a la lanza se realiza únicamente acá.
+using Ucu.Poo.RolePlayGame;
+
 namespace Elfs
 {
-    public class Spear : IEquipmentStats
+    public class Spear : IItems
     {
         //Se inicializan aquellas responsabilidades de conocer de la clase Axe
         //Valor de ataque y de defensa.
