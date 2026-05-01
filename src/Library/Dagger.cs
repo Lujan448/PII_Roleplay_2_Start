@@ -3,8 +3,8 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al daga se realiza únicamente acá.
 
-
-namespace Ucu.Poo.RolePlayGame
+using Ucu.Poo.RolePlayGame;
+namespace Archers
 {
     public class Dagger : IItems
     {

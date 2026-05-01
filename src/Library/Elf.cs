@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
+using Ucu.Poo.RolePlayGame;
 using Library;
 
 //Es la clase Experta, ya que se encarga de conocer todas las responsabilidades que tiene Elf
 //y los comportamientos que va a realizar son a partir del conocimiento de cada una de estas responsabilidades.
-namespace Ucu.Poo.RolePlayGame
+namespace Elfs
 {
     public class Elf : ICharacters
     {

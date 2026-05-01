@@ -2,8 +2,9 @@
 //Se aplica SRP separándola de Wizard, ya que si la lógica de los hechizos viviera dentro de Wizard,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a los hechizos se realiza únicamente acá.
+using Ucu.Poo.RolePlayGame;
 
-namespace Ucu.Poo.RolePlayGame
+namespace Wizards
 {
     public class Spell : IItems
     {

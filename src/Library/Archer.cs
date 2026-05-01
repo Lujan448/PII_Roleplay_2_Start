@@ -1,9 +1,9 @@
 //Es la clase Experta, ya que se encarga de conocer todas las responsabilidades que tiene Archer 
 //y los comportamientos que va a realizar son a partir del conocimiento de cada una de estas responsabilidades.
 using Library;
+using Ucu.Poo.RolePlayGame;
 
-
-namespace Ucu.Poo.RolePlayGame
+namespace Archers
 {
     public class Archer : ICharacters
     {

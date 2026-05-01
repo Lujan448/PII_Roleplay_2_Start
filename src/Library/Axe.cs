@@ -2,8 +2,9 @@
 //Se aplica SRP separándola de Dwarf, ya que si la lógica del hacha viviera dentro de Dwarf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al hacha se realiza únicamente acá.
+using Ucu.Poo.RolePlayGame;
 
-namespace Ucu.Poo.RolePlayGame
+namespace Dwarfs
 
 {
     public class Axe : IItems

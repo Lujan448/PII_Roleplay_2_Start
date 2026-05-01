@@ -2,8 +2,9 @@
 //Se aplica SRP separándola de Elf, ya que si la lógica de la lanza viviera dentro de Elf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a la lanza se realiza únicamente acá.
+using Ucu.Poo.RolePlayGame;
 
-namespace Ucu.Poo.RolePlayGame
+namespace Elfs
 {
     public class Spear : IItems
     {
