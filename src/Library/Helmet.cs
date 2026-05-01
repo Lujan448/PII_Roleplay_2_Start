@@ -2,9 +2,8 @@
 //Se aplica SRP separándola de Elf, ya que si la lógica del escudo viviera dentro de Elf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al escudo se realiza únicamente acá.
-using Ucu.Poo.RolePlayGame;
 
-namespace Elfs
+namespace Ucu.Poo.RolePlayGame
 {
 public class Helmet : IItems
     {

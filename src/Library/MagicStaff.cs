@@ -2,9 +2,9 @@
 //Se aplica SRP separándola de Wizard, ya que si la lógica del bastón mágico viviera dentro de Wizard,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al bastón se realiza únicamente acá.
-using Ucu.Poo.RolePlayGame;
 
-namespace Wizards
+
+namespace Ucu.Poo.RolePlayGame
 {
     public class MagicStaff : IItems
     {

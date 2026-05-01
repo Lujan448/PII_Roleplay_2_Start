@@ -3,9 +3,8 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al arco se realiza únicamente acá.
 
-using Ucu.Poo.RolePlayGame;
 
-namespace Archers
+namespace Ucu.Poo.RolePlayGame
 {
     public class Bow : IItems
     {

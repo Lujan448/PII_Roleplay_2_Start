@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using Spells;
-using Ucu.Poo.RolePlayGame;
 
 //Es la clase experta de la información que corresponde a el libro de hechizos.
 //Se aplica SRP separándola de Wizard, ya que si la lógica del libro de hechizos viviera dentro de Wizard,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al libro se realiza únicamente acá.
-namespace Wizards
+namespace Ucu.Poo.RolePlayGame
 {
     public class SpellBook
     {

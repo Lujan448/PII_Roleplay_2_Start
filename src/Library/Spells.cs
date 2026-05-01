@@ -3,9 +3,7 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a los hechizos se realiza únicamente acá.
 
-using Ucu.Poo.RolePlayGame;
-
-namespace Spells
+namespace Ucu.Poo.RolePlayGame
 {
     public class Spell : IItems
     {

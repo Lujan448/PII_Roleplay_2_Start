@@ -3,9 +3,8 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada a la tunica se realiza únicamente acá.
 
-using Ucu.Poo.RolePlayGame;
 
-namespace Wizards
+namespace Ucu.Poo.RolePlayGame
 {
     public class Tunic : IItems
     {

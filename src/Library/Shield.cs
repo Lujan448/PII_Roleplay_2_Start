@@ -2,9 +2,8 @@
 //Se aplica SRP separándola de Dwarf, ya que si la lógica del escudo viviera dentro de Dwarf,
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al escudo se realiza únicamente acá.
-using Ucu.Poo.RolePlayGame;
 
-namespace Dwarfs
+namespace Ucu.Poo.RolePlayGame
 {
 public class Shield : IItems
     {

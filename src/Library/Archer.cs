@@ -1,9 +1,9 @@
 //Es la clase Experta, ya que se encarga de conocer todas las responsabilidades que tiene Archer 
 //y los comportamientos que va a realizar son a partir del conocimiento de cada una de estas responsabilidades.
 using Library;
-using Ucu.Poo.RolePlayGame;
 
-namespace Archers
+
+namespace Ucu.Poo.RolePlayGame
 {
     public class Archer : ICharacters
     {
@@ -122,6 +122,5 @@ namespace Archers
             int totalDefense = this.defenseValue + item1.DefenseValue + item2.DefenseValue;
             return totalDefense;
         }
-
     }  
 }

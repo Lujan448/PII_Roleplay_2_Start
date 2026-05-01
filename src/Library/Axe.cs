@@ -3,9 +3,7 @@
 //esa clase tendría más de una razón de cambio.
 //De esta forma, cualquier modificación relacionada al hacha se realiza únicamente acá.
 
-using Ucu.Poo.RolePlayGame;
-
-namespace Dwarfs
+namespace Ucu.Poo.RolePlayGame
 
 {
     public class Axe : IItems
