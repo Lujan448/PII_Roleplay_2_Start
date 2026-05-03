@@ -11,7 +11,7 @@ namespace SpellBookTests
         public void HasSpell_ReturnsFalse_IfSpellNotAdded()
         {
             SpellBook book = new SpellBook();
-            Spell spell = new Spell("Nombre", 10);
+            Spell spell = new Spell("Nombre", 10, 5);
             Assert.That(book.HasSpell(spell), Is.False);
         }
 
@@ -20,7 +20,7 @@ namespace SpellBookTests
         public void HasSpell_ReturnsTrue_AfterAddSpell()
         {
             SpellBook book = new SpellBook();
-            Spell spell = new Spell("Nombre", 10);
+            Spell spell = new Spell("Nombre", 10, 5);
             book.AddSpell(spell);
             Assert.That(book.HasSpell(spell), Is.True);
         }
