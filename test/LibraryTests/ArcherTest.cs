@@ -53,7 +53,7 @@ namespace ArchersTests
             Elf elf = new Elf("Nombre", 20, 10, 100);
             Bow bow = new Bow(50);
             archer.AttackOthers(elf, bow);
-            Assert.That(elf.Health, Is.EqualTo(95));
+            Assert.That(elf.Health, Is.EqualTo(60));
         }
 
         //Verifica que Cure restaura la vida al máximo

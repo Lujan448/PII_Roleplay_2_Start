@@ -3,7 +3,7 @@ using Library;
 using Elfs;
 using Dwarfs;
 
-namespace DwarfsTests
+namespace ElfsTests
 {
     [TestFixture]
     public class ElfTest
@@ -53,7 +53,7 @@ namespace DwarfsTests
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
             Spear spear = new Spear(50);
             elf.AttackOthers(dwarf, spear);
-            Assert.That(dwarf.Health, Is.EqualTo(95));
+            Assert.That(dwarf.Health, Is.EqualTo(60));
         }
 
         //Verifica que Cure restaura la vida al máximo
@@ -95,7 +95,7 @@ namespace DwarfsTests
             Helmet newHelmet = new Helmet(10);
             Elf elf = new Elf("Nombre", 20, 10, 100);
             elf.ChangeItem(newHelmet);
-            Assert.That(elf.AttackValue, Is.EqualTo(10));
+            Assert.That(elf.DefenseValue, Is.EqualTo(10));
         }
 
         //Verifica si el ataque total retorna la suma correcta

@@ -3,7 +3,7 @@ using Library;
 using Archers;
 using Wizards;
 
-namespace ArchersTests
+namespace WizardsTests
 {
     [TestFixture]
     public class WizardTest
@@ -53,7 +53,7 @@ namespace ArchersTests
             Archer archer= new Archer("Nombre", 20, 10, 100);
             MagicStaff staff = new MagicStaff(50);
             wizard.AttackOthers(archer, staff);
-            Assert.That(archer.Health, Is.EqualTo(95));
+            Assert.That(archer.Health, Is.EqualTo(60));
         }
 
         //Verifica que Cure restaura la vida al máximo
@@ -95,7 +95,7 @@ namespace ArchersTests
             Tunic newTunic = new Tunic(10);
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
             wizard.ChangeItem(newTunic);
-            Assert.That(wizard.AttackValue, Is.EqualTo(10));
+            Assert.That(wizard.DefenseValue, Is.EqualTo(10));
         }
 
         //Verifica si el ataque total retorna la suma correcta
@@ -106,7 +106,7 @@ namespace ArchersTests
             Tunic tunic = new Tunic(0);
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
             int result = wizard.AttackTotal(staff, tunic);
-            Assert.That(result, Is.EqualTo(40));
+            Assert.That(result, Is.EqualTo(35));
         }
 
         //Verifica en caso de que la suma no retorne la suma correcta

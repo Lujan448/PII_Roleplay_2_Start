@@ -53,7 +53,7 @@ namespace DwarfsTests
             Elf elf = new Elf("Nombre", 20, 10, 100);
             Axe axe = new Axe(50);
             dwarf.AttackOthers(elf, axe);
-            Assert.That(elf.Health, Is.EqualTo(95));
+            Assert.That(elf.Health, Is.EqualTo(60));
         }
 
         //Verifica que Cure restaura la vida al máximo
@@ -95,7 +95,7 @@ namespace DwarfsTests
             Shield newShield = new Shield(10);
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
             dwarf.ChangeItem(newShield);
-            Assert.That(dwarf.AttackValue, Is.EqualTo(10));
+            Assert.That(dwarf.DefenseValue, Is.EqualTo(10));
         }
 
         //Verifica si el ataque total retorna la suma correcta
@@ -106,7 +106,7 @@ namespace DwarfsTests
             Shield shield = new Shield(0);
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
             int result = dwarf.AttackTotal(axe, shield);
-            Assert.That(result, Is.EqualTo(40));
+            Assert.That(result, Is.EqualTo(35));
         }
 
         //Verifica en caso de que la suma no retorne la suma correcta
