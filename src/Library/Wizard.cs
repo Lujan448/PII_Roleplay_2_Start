@@ -15,12 +15,14 @@ namespace Wizards
             get {return name; } set {name = value; } 
         }
 
+        private int baseAttackValue;
         private int attackValue;
         public int AttackValue 
         { 
             get {return attackValue; } set {attackValue = value;} 
         }
 
+        private int baseDefenseValue;
         private int defenseValue;
         public int DefenseValue 
         { 
@@ -55,8 +57,8 @@ namespace Wizards
         public Wizard(string name, int attackValue, int defenseValue, int health = 100)
         {
             this.Name = name;
-            this.AttackValue = attackValue;
-            this.DefenseValue = defenseValue;
+            this.baseAttackValue = attackValue;
+            this.baseDefenseValue = defenseValue;
             this.maxHealth = health;
             this.Health = health;
         }
@@ -115,7 +117,7 @@ namespace Wizards
         //Se encarga de calcular el total de ataque del wizard
         public int AttackTotal(IItems item1, IItems item2)
         {
-            int totalAttack = this.AttackValue + item1.AttackValue + item2.AttackValue;
+            int totalAttack = this.baseAttackValue + item1.AttackValue + item2.AttackValue;
             return totalAttack;
         }
 
@@ -123,7 +125,7 @@ namespace Wizards
         //Es el encargado de calcular el total de valor de defensa que tiene el personaje.
         public int DefenseTotal(IItems item1, IItems item2)
         {
-            int totalDefense = this.defenseValue + item1.DefenseValue + item2.DefenseValue;
+            int totalDefense = this.baseDefenseValue + item1.DefenseValue + item2.DefenseValue;
             return totalDefense;
         }
     }

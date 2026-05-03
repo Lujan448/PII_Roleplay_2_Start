@@ -15,12 +15,14 @@ namespace Archers
             get {return name; } set {name = value; } 
         }
 
+        private int baseAttackValue;
         private int attackValue;
         public int AttackValue 
         { 
             get {return attackValue; } set {attackValue = value;} 
         }
 
+        private int baseDefenseValue;
         private int defenseValue;
         public int DefenseValue 
         { 
@@ -55,8 +57,8 @@ namespace Archers
         public Archer(string name, int attackValue, int defenseValue, int health = 100)
         {
             this.Name = name;
-            this.AttackValue = attackValue;
-            this.DefenseValue = defenseValue;
+            this.baseAttackValue = attackValue;
+            this.baseDefenseValue = defenseValue;
             this.maxHealth = health;
             this.Health = health;
         }
@@ -115,14 +117,14 @@ namespace Archers
         //Es el encargado de calcular el ataque total del personaje.
         public int AttackTotal(IItems item1, IItems item2)
         {
-            int totalAttack = this.AttackValue + item1.AttackValue + item2.AttackValue;
+            int totalAttack = this.baseAttackValue + item1.AttackValue + item2.AttackValue;
             return totalAttack;
         }
 
         //Se encarga de calcular la defensa total del personaje
         public int DefenseTotal(IItems item1, IItems item2)
         {
-            int totalDefense = this.defenseValue + item1.DefenseValue + item2.DefenseValue;
+            int totalDefense = this.baseDefenseValue + item1.DefenseValue + item2.DefenseValue;
             return totalDefense;
         }
     }  
