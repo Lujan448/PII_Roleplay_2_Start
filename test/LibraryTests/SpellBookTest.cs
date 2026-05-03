@@ -7,7 +7,7 @@ namespace SpellBookTests
     [TestFixture]
     public class SpellBookTest
     {
-        //HasSpell devuelve false si no se agregó el spell a la lista
+        //HasSpell devuelve false si no se agregó el spell a la lista o si este se removio
         [Test]
         public void HasSpell_ReturnsFalse_IfSpellNotAdded()
         {
