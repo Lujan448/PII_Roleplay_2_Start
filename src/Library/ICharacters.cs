@@ -3,6 +3,8 @@ using Ucu.Poo.RolePlayGame;
 
 namespace Library
 {
+    //Esta va a ser la interfaz, la cual se agrego con el proposito de simplificar el código de los personajes
+    //y como estos tienen todos caracteristicas en común se pudo realizar esta implementación.
     public interface ICharacters
     {
         string Name { get;}

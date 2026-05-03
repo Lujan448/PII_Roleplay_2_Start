@@ -77,6 +77,7 @@ namespace Wizards
             }
         }
 
+        //Es el método que se encarga de atacar al resto de personajes
         public void AttackOthers(ICharacters characters, IItems item)
         {
             characters.ReceiveAttack(item);
@@ -89,7 +90,7 @@ namespace Wizards
             this.Health = maxHealth;
         }
 
-        //En los siguientes dos métodos lo que se hace es poder cambiar el arma que tienen por uno nuevo
+        //En el siguiente método lo que se hace es poder cambiar el arma que tienen por uno nuevo
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase MagicStaff o Tunic de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se cambia un item solo,
@@ -97,9 +98,10 @@ namespace Wizards
         public void ChangeItem(IItems newItem)
         {
             this.AttackValue = newItem.AttackValue;
+            this.DefenseValue = newItem.DefenseValue;
         }
 
-        //En los siguientes dos métodos lo que se hace es poder remover el arma que tiene
+        //En el siguiente método lo que se hace es poder remover el arma que tiene
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase MagicStaff o Tunic de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se saca un item solo,

@@ -24,7 +24,7 @@ namespace Wizards
             return spellList.Contains(spell);
         }
 
-        //Método para quitar un hexhizo
+        //Método para quitar un hechizo
         public void RemoveSpell(Spell spell)
         {
             spellList.Remove(spell);

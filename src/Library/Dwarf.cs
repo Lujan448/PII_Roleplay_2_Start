@@ -66,7 +66,8 @@ namespace Dwarfs
         {
             return this.Health > 0;
         }
-    
+
+        //Es el método encargado de que el personaje reciba daño de otro personaje
         public void ReceiveAttack(IItems attackValue)
         {
             int damage = attackValue.AttackValue - this.DefenseValue;
@@ -76,34 +77,31 @@ namespace Dwarfs
             }
         }
 
-        //Elegimos que el que se encargue de atacar sea el enano, ya que por letra se entendia
-        //que era el más preparado para pelear.
-        //Hicimos un método especifico para que ataque un elfos, ya que no nos dejaba que el elfo curara
-        //a otros personajes por fuera de los elfos. La unica forma que dejaba es que agregaramos el método
-        //HealCompleatly(), perteneciente a los elfos, a cada una de las clases, sin embargo, por letra nosotros entendimos
-        //que ese método era perteneciente a la clase Elf únicamente.
+        //Es el método encargado de atacar a otros personajes
 
         public void AttackOthers(ICharacters characters, IItems item)
         {
             characters.ReceiveAttack(item);
         }
 
+        //Es el método encargado de curar al personaje hasta su vida máxima
         public void Cure()
         {
             this.Health = maxHealth;
         }
 
-        //En los siguientes dos métodos lo que se hace es poder cambiar el arma que tienen por uno nuevo
+        //En el siguiente método lo que se hace es poder cambiar el arma que tienen por uno nuevo
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase Axe o Shield de manera individual pueden 
         //cumplir con estas responsabilidades, logicamente no tiene sentido, no se cambia un item solo,
         //es el personaje el que cambia el item por otro.
-        public void ChangeItem(IItems item)
+        public void ChangeItem(IItems newItem)
         {
-            this.AttackValue = item.AttackValue;  
+            this.AttackValue = newItem.AttackValue;
+            this.DefenseValue = newItem.DefenseValue; 
         }
 
-        //En los siguientes dos métodos lo que se hace es poder remover el arma que tiene
+        //En el siguiente método lo que se hace es poder remover el arma que tiene
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase Axe o Shield de manera individual pueden 
         //cumplir con estas responsabilidades, logicamente no tiene sentido, no se saca un item solo,

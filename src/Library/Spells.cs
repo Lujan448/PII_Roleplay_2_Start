@@ -8,7 +8,7 @@ namespace Wizards
 {
     public class Spell : IItems
     {
-        //Se inicializan aquellas responsabilidades de conocer de la clase Axe
+        //Se inicializan aquellas responsabilidades de conocer de la clase Spells
         //Valor de nombre, ataque y de defensa.
         private int attackValue;
         public int AttackValue 
@@ -29,15 +29,12 @@ namespace Wizards
             get {return name; } set {name = value;}
         }
 
-        //Ceamos al constructor 
-        //En este caso no en ni un arma ni una armadura, sin embargo el valor de defensa es fundamental para
-        // el progreso.
-        // En el caso del valor de ataque va a ser 0.
-        public Spell(string Name, int DefenseValue)
+        //Creamos al constructor 
+        public Spell(string name, int defenseValue, int attackValue)
         {
-            this.AttackValue = 0;
-            this.DefenseValue = DefenseValue;
-            this.Name = Name;
+            this.AttackValue = attackValue;
+            this.DefenseValue = defenseValue;
+            this.Name = name;
         }
     }
 }

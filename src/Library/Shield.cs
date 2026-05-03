@@ -23,7 +23,7 @@ public class Shield : IItems
             get {return defenseValue; } set {defenseValue = value; } 
         }
 
-        //Ceamos al constructor 
+        //Creamos al constructor 
         //En este caso como es parte de la armadura en si, su valor de ataque va a ser 0.
         public Shield(int DefenseValue)
         {

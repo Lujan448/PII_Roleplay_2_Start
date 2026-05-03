@@ -23,7 +23,7 @@ namespace Dwarfs
             get {return defenseValue; } set { defenseValue = value;}
         }
 
-        //Ceamos al constructor 
+        //Creamos al constructor 
         //En este caso como es un arma, su valor de defensa va a ser 0.
         public Axe(int AttackValue)
         {

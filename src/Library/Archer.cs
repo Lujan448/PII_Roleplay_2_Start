@@ -77,17 +77,19 @@ namespace Archers
             }
         }
 
+        //Es el método encargado de atacar a otros personajes
         public void AttackOthers(ICharacters characters, IItems item)
         {
             characters.ReceiveAttack(item);
         }
 
+        //Es el método encargado de curarse hasta el maximo de vida
         public void Cure()
         {
             this.Health = maxHealth;
         }
 
-        //En los siguientes dos métodos lo que se hace es poder cambiar el arma que tienen por uno nuevo
+        //En el siguiente método lo que se hace es poder cambiar el arma que tienen por uno nuevo
         //En este caso lo pusimos en esta clase porque nos parecia que era la Experta de la información para poder realizar
         //las responsabilidades correspondientes y además porque por más que las clase Bow o Dagger de manera individual pueden 
         //cumplir con estas responsabilidades, pero logicamente no tiene sentido, no se cambia un item solo,
@@ -95,6 +97,7 @@ namespace Archers
         public void ChangeItem(IItems newItem)
         {
             this.AttackValue = newItem.AttackValue;
+            this.DefenseValue = newItem.DefenseValue;
         }
 
         //En el siguiente método lo que se hace es poder remover el arma que tiene

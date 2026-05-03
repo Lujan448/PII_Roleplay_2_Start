@@ -8,7 +8,7 @@ namespace Elfs
 {
     public class Spear : IItems
     {
-        //Se inicializan aquellas responsabilidades de conocer de la clase Axe
+        //Se inicializan aquellas responsabilidades de conocer de la clase Spear
         //Valor de ataque y de defensa.
         private int attackValue;
         public int AttackValue 
@@ -22,7 +22,7 @@ namespace Elfs
             get {return defenseValue; } set { defenseValue = value;}
         }
 
-        //Ceamos al constructor 
+        //Creamos al constructor 
         //En este caso como es un arma, su valor de defensa va a ser 0.
         public Spear(int attackValue)
         {

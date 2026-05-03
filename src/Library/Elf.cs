@@ -78,11 +78,13 @@ namespace Elfs
             }
         }
 
+        //Este método se encarga de atacar a otros personajes
         public void AttackOthers(ICharacters characters, IItems item)
         {
             characters.ReceiveAttack(item);
         }
 
+        //Este método se encarga de curar al personaje a su vida máxima nuevamente
         public void Cure()
         {
             this.Health = maxHealth;
@@ -96,6 +98,7 @@ namespace Elfs
         public void ChangeItem(IItems newItem)
         {
             this.AttackValue = newItem.AttackValue;
+            this.DefenseValue = newItem.DefenseValue;
         }
 
         //En el siguiente método lo que se hace es poder remover el arma que tiene
@@ -109,6 +112,7 @@ namespace Elfs
             this.DefenseValue = 0;
         }
         
+        //En el siguiente método lo que se hace es calcular el total de valor de defensa que tiene el personaje
         public int AttackTotal(IItems item1, IItems item2)
         {
             int totalAttack = this.AttackValue + item1.AttackValue + item2.AttackValue;
