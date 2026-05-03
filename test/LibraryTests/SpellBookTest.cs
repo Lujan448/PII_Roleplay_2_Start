@@ -1,4 +1,3 @@
-using Spells;
 using Wizards;
 using NUnit.Framework;
 
