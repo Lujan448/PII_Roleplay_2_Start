@@ -29,7 +29,7 @@ namespace WizardsTests
         public void ReceiveAttack_WhenDamageExceedsDefense_DecreasesHealth()
         {
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
-            MagicStaff attacker = new MagicStaff(30); 
+            Bow attacker = new Bow(30); 
             wizard.ReceiveAttack(attacker);
             Assert.That(wizard.Health, Is.EqualTo(80));
         }
@@ -39,7 +39,7 @@ namespace WizardsTests
         public void ReceiveAttack_WhenDamageLessThanDefense_HealthUnchanged()
         {
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
-            MagicStaff attacker = new MagicStaff(5); 
+            Bow attacker = new Bow(5); 
             wizard.ReceiveAttack(attacker);
             Assert.That(wizard.Health, Is.EqualTo(100));    //Esto pasa cuandotenes una cantidad de ataque menor o igual
                                                             //a la defensa, entonces simplemente queda la vida original o la que tenía hasta ese momento.
@@ -61,7 +61,7 @@ namespace WizardsTests
         public void Cure_WhenCalled_RestoresHealthToMax()
         {
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
-            MagicStaff attacker = new MagicStaff(50); 
+            Bow attacker = new Bow(50); 
             wizard.ReceiveAttack(attacker);
             Assert.That(wizard.Health, Is.EqualTo(60)); //verificamos que recibió daño
  
@@ -74,7 +74,7 @@ namespace WizardsTests
         public void Cure_WhenCalledAtFullHealth_DoesNotExceedMaxHealth()
         {
             Wizard wizard = new Wizard("Nombre", 20, 10, 100);
-            wizard.Cure();                                          //curar estando lleno no debe cambiar nada
+            wizard.Cure();                                          //curar estando lleno no cambia nada
             Assert.That(wizard.Health, Is.EqualTo(100));
         }
 

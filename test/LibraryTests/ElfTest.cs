@@ -29,7 +29,7 @@ namespace ElfsTests
         public void ReceiveAttack_WhenDamageExceedsDefense_DecreasesHealth()
         {
             Elf elf = new Elf("Nombre", 20, 10, 100);
-            Spear attacker = new Spear(30); 
+            Axe attacker = new Axe(30);                         
             elf.ReceiveAttack(attacker);
             Assert.That(elf.Health, Is.EqualTo(80));
         }
@@ -39,7 +39,7 @@ namespace ElfsTests
         public void ReceiveAttack_WhenDamageLessThanDefense_HealthUnchanged()
         {
             Elf elf = new Elf("Nombre", 20, 10, 100);
-            Spear attacker = new Spear(5); 
+            Axe attacker = new Axe(5); 
             elf.ReceiveAttack(attacker);
             Assert.That(elf.Health, Is.EqualTo(100));    //Esto pasa cuando tenes una cantidad de ataque menor o igual
                                                          //a la defensa, entonces simplemente queda la vida original o la que tenía hasta ese momento.
@@ -61,7 +61,7 @@ namespace ElfsTests
         public void Cure_WhenCalled_RestoresHealthToMax()
         {
             Elf elf = new Elf("Nombre", 20, 10, 100);
-            Spear attacker = new Spear(50); 
+            Axe attacker = new Axe(50); 
             elf.ReceiveAttack(attacker);
             Assert.That(elf.Health, Is.EqualTo(60)); //verificamos que recibió daño
  
@@ -74,7 +74,7 @@ namespace ElfsTests
         public void Cure_WhenCalledAtFullHealth_DoesNotExceedMaxHealth()
         {
             Elf elf = new Elf("Nombre", 20, 10, 100);
-            elf.Cure();                                 //curar estando lleno no debe cambiar nada
+            elf.Cure();                                 //curar estando lleno no cambia nada
             Assert.That(elf.Health, Is.EqualTo(100));
         }
 

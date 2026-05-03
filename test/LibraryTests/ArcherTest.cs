@@ -29,7 +29,7 @@ namespace ArchersTests
         public void ReceiveAttack_WhenDamageExceedsDefense_DecreasesHealth()
         {
             Archer archer = new Archer("Nombre", 20, 10, 100);
-            Bow attacker = new Bow(30); 
+            Spear attacker = new Spear(30); 
             archer.ReceiveAttack(attacker);
             Assert.That(archer.Health, Is.EqualTo(80));
         }
@@ -39,7 +39,7 @@ namespace ArchersTests
         public void ReceiveAttack_WhenDamageLessThanDefense_HealthUnchanged()
         {
             Archer archer = new Archer("Nombre", 20, 10, 100);
-            Bow attacker = new Bow(5); 
+            Spear attacker = new Spear(5); 
             archer.ReceiveAttack(attacker);
             Assert.That(archer.Health, Is.EqualTo(100));    //Esto pasa cuandotenes una cantidad de ataque menor o igual
                                                             //a la defensa, entonces simplemente queda la vida original o la que tenía hasta ese momento.
@@ -61,7 +61,7 @@ namespace ArchersTests
         public void Cure_WhenCalled_RestoresHealthToMax()
         {
             Archer archer = new Archer("Nombre", 20, 10, 100);
-            Bow attacker = new Bow(50); 
+            Spear attacker = new Spear(50); 
             archer.ReceiveAttack(attacker);
             Assert.That(archer.Health, Is.EqualTo(60)); //verificamos que recibió daño
  
@@ -74,7 +74,7 @@ namespace ArchersTests
         public void Cure_WhenCalledAtFullHealth_DoesNotExceedMaxHealth()
         {
             Archer archer = new Archer("Nombre", 20, 10, 100);
-            archer.Cure();                                              //curar estando lleno no debe cambiar nada
+            archer.Cure();                                              //curar estando lleno no cambia nada
             Assert.That(archer.Health, Is.EqualTo(100));
         }
 

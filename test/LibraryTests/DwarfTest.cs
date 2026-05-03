@@ -29,7 +29,7 @@ namespace DwarfsTests
         public void ReceiveAttack_WhenDamageExceedsDefense_DecreasesHealth()
         {
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
-            Axe attacker = new Axe(30); 
+            Spear attacker = new Spear(30); 
             dwarf.ReceiveAttack(attacker);
             Assert.That(dwarf.Health, Is.EqualTo(80));
         }
@@ -39,7 +39,7 @@ namespace DwarfsTests
         public void ReceiveAttack_WhenDamageLessThanDefense_HealthUnchanged()
         {
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
-            Axe attacker = new Axe(5); 
+            Spear attacker = new Spear(5); 
             dwarf.ReceiveAttack(attacker);
             Assert.That(dwarf.Health, Is.EqualTo(100));  //Esto pasa cuando tenes una cantidad de ataque menor o igual
                                                          //a la defensa, entonces simplemente queda la vida original o la que tenía hasta ese momento.
@@ -61,7 +61,7 @@ namespace DwarfsTests
         public void Cure_WhenCalled_RestoresHealthToMax()
         {
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
-            Axe attacker = new Axe(50); 
+            Spear attacker = new Spear(50); 
             dwarf.ReceiveAttack(attacker);
             Assert.That(dwarf.Health, Is.EqualTo(60)); //verificamos que recibió daño
  
@@ -74,7 +74,7 @@ namespace DwarfsTests
         public void Cure_WhenCalledAtFullHealth_DoesNotExceedMaxHealth()
         {
             Dwarf dwarf = new Dwarf("Nombre", 20, 10, 100);
-            dwarf.Cure();                                       //curar estando lleno no debe cambiar nada
+            dwarf.Cure();                                       //curar estando lleno no cambia nada
             Assert.That(dwarf.Health, Is.EqualTo(100));
         }
 
