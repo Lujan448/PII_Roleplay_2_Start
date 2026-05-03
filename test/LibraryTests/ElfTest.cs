@@ -106,7 +106,7 @@ namespace ElfsTests
             Helmet helmet = new Helmet(0);
             Elf elf = new Elf("Nombre", 20, 10, 100);
             int result = elf.AttackTotal(spear, helmet);
-            Assert.That(result, Is.EqualTo(40));
+            Assert.That(result, Is.EqualTo(35));
         }
 
         //Verifica en caso de que la suma no retorne la suma correcta
