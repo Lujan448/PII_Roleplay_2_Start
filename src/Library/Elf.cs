@@ -73,7 +73,7 @@ namespace Elfs
         //Este método lo que va a realizar es que este personaje puede recibir ataque de otro.
         public void ReceiveAttack(IItems attackValue)
         {
-            int damage = attackValue.AttackValue - this.DefenseValue;
+            int damage = attackValue.AttackValue - this.baseDefenseValue;
             if (damage > 0) 
             {
                 this.Health -= damage;

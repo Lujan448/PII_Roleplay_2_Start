@@ -72,7 +72,7 @@ namespace Dwarfs
         //Es el método encargado de que el personaje reciba daño de otro personaje
         public void ReceiveAttack(IItems attackValue)
         {
-            int damage = attackValue.AttackValue - this.DefenseValue;
+            int damage = attackValue.AttackValue - this.baseDefenseValue;
             if (damage > 0) 
             {
                 this.Health -= damage;
