@@ -7,7 +7,7 @@ using Wizards;
 //Es el Main, es el que se va a encargar de crear los objetos y probar los comportamientos de cada clase.
 namespace Program
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -38,7 +38,7 @@ namespace Program
             
             //Wizard
             Wizard snape = new Wizard("Snape", 5, 2);
-            Spell spell = new Spell("Defense", 15);
+            Spell spell = new Spell("Defense", 15, 5);
             SpellBook book = new SpellBook();
             book.AddSpell(spell);
             MagicStaff staff = new MagicStaff(20);
@@ -58,11 +58,9 @@ namespace Program
             snape.ReceiveAttack(axe);
             legolas.AttackOthers(gimli,spear);
             legolas.RemoveItem(spear);
-            Console.WriteLine($"Se le ha sacado el item a {legolas.Name}");
             gimli.ReceiveAttack(spear);
             robin.AttackOthers(legolas,bow);
             robin.RemoveItem(bow);
-            Console.WriteLine($"Se le ha sacado el item a {robin.Name}\n");
             legolas.ReceiveAttack(bow);
             snape.AttackOthers(robin, staff);
             robin.ReceiveAttack(staff);
@@ -70,8 +68,10 @@ namespace Program
             Console.WriteLine($"{gimli.Name} ha atacado a {snape.Name}");
             Console.WriteLine($"La vida de {snape.Name} bajó a: {snape.Health} de vida");
             Console.WriteLine($"{legolas.Name} ha atacado a {gimli.Name}");
+            Console.WriteLine($"Se le ha sacado un item a {legolas.Name}");
             Console.WriteLine($"La vida de {gimli.Name} bajó a: {gimli.Health} de vida");
             Console.WriteLine($"{robin.Name} ha atacado a {legolas.Name}");
+            Console.WriteLine($"Se le ha sacado un item a {robin.Name}");
             Console.WriteLine($"La vida de {legolas.Name} bajó a: {legolas.Health} de vida");
             Console.WriteLine($"{snape.Name} ha atacado a {robin.Name}");
             Console.WriteLine($"La vida de {robin.Name} bajó a: {robin.Health} de vida\n");
